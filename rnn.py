@@ -23,7 +23,7 @@ class RNN(nn.Module):
         self.numOfLayer = 1
         self.rnn = nn.RNN(input_dim, h, self.numOfLayer, nonlinearity='tanh')
         self.W = nn.Linear(h, 5)
-        self.softmax = nn.LogSoftmax(dim=1)
+        self.softmax = nn.LogSoftmax()
         self.loss = nn.NLLLoss()
 
         self.output_sum = torch.zeros(h)
